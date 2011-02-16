@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- <PropertyList include="c421-jsbsim-cnf.xml"> -->
+<PropertyList include="c421-yasim-cnf.xml">
+
+  <sim>
+    <description>Cessna 421 Golden Eagle</description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+  </sim>
+
+</PropertyList>
+

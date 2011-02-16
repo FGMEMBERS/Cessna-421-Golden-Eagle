@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/Cessna-421-Golden-Eagle/c421-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/Cessna-421-Golden-Eagle/Sounds/c421-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/Cessna-421-Golden-Eagle/Models/c421.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <flaps>
+      <setting> 0.000 </setting>
+      <setting> 0.375 </setting>
+      <setting> 1.000 </setting> <!-- 20 deg -->
+    </flaps>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int">0</int>  <!-- 0 immat -->
+        <int type="int">0</int>  <!-- 1 immat -->
+        <int type="int">0</int>  <!-- 2 immat -->
+        <int type="int">0</int>  <!-- 3 immat -->
+        <int type="int">0</int>  <!-- 4 immat -->
+        <int type="int">0</int>  <!-- 5 immat -->
+        <int type="bool">0</int> <!-- 6 smoke -->
+        <int type="int">0</int>  <!-- 7 color -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>c421</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+      <key>
+        <name>d</name>
+        <desc>Open/Close door</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/c421-menu.xml"/>
+
+  </sim>
+ 
+  <controls>
+    <gear>
+      <brake-parking type="double">1</brake-parking>
+    </gear>
+  </controls>
+
+  <input>
+    <keyboard include="Nasal/c421-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <doors>
+      <file>Aircraft/Cessna-421-Golden-Eagle/Nasal/doors.nas</file>
+    </doors>
+    <c421>
+      <file>Aircraft/Cessna-421-Golden-Eagle/Nasal/light.nas</file>
+      <file>Aircraft/Cessna-421-Golden-Eagle/Nasal/liveries.nas</file>
+      <file>Aircraft/Cessna-421-Golden-Eagle/Nasal/immat.nas</file>
+    </c421>
+  </nasal>
+   
+</PropertyList>
+
