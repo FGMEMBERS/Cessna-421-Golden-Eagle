@@ -71,6 +71,7 @@
 
     <!-- Objets transparents -->
     <object-name>vitres</object-name>
+    <object-name>portevitre</object-name>
 
     <object-name>propblurG</object-name>
     <object-name>propblurD</object-name>
@@ -190,11 +191,13 @@
     <shader>chrome</shader>
     <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
     <object-name>vitres</object-name>
+    <object-name>portevitre</object-name>
   </animation>
 
   <animation>
     <type>noshadow</type>
     <object-name>vitres</object-name>
+    <object-name>portevitre</object-name>
 
     <object-name>propblurG</object-name>
     <object-name>propblurD</object-name>
