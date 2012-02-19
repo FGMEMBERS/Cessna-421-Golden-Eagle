@@ -207,18 +207,17 @@
 
   <!-- Une ombre pour OSG -->
   <model>
-    <name>shadowOSG</name>
     <path>Aircraft/Cessna-421-Golden-Eagle/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -1.660 </z-m>
+    </offsets>
   </model>
 
   <!-- Intérieur -->
   <model>
     <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/interior.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </offsets>
   </model>
 
   <!-- Immatriculatoin
@@ -237,27 +236,23 @@
   <!-- Cranking effects -->
   <!-- Left -->
   <model>
-    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Effects/cranking/cranking.xml</path>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Effects/cranking/crankingL.xml</path>
     <offsets>
       <x-m> -2.265 </x-m>
       <y-m> -2.542 </y-m>
       <z-m> -0.987 </z-m>
-      <roll-deg>    0 </roll-deg>
       <pitch-deg>  45 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
   <!-- Right -->
   <model>
-    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Effects/cranking/cranking.xml</path>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Effects/cranking/crankingR.xml</path>
     <offsets>
       <x-m> -2.265 </x-m>
       <y-m>  2.542 </y-m>
       <z-m> -0.987 </z-m>
-      <roll-deg>    0 </roll-deg>
       <pitch-deg>  45 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
 
@@ -373,7 +368,7 @@
     <condition>
       <greater-than>
         <property>engines/engine[0]/rpm</property>
-        <value>1100</value>
+        <value> 1100 </value>
       </greater-than>
     </condition>
   </animation>
@@ -385,11 +380,11 @@
     <and>
       <greater-than>
         <property>engines/engine[0]/rpm</property>
-        <value>500.000</value>
+        <value> 500.000 </value>
       </greater-than>
       <less-than>
         <property>engines/engine[0]/rpm</property>
-        <value>1100.001</value>
+        <value> 1100.001 </value>
       </less-than>
     </and>
     </condition>
@@ -401,7 +396,7 @@
     <condition>
       <less-than>
         <property>engines/engine[0]/rpm</property>
-        <value>1100</value>
+        <value> 1100 </value>
       </less-than>
     </condition>
   </animation>
