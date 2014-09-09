@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/Cessna-421-Golden-Eagle/c421-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path archive="y">Aircraft/Cessna-421-Golden-Eagle/Sounds/c421-sound.xml</path>
+    </sound>
+
+    <model>
+      <path archive="y">Aircraft/Cessna-421-Golden-Eagle/Models/c421.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+
+    <flaps>
+      <setting> 0.000 </setting>
+      <setting> 0.375 </setting>
+      <setting> 1.000 </setting> <!-- 20 deg -->
+    </flaps>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int" n="0">  0 </int>                                           <!--  0 immat -->
+        <int type="int" n="1">  0 </int>                                           <!--  1 immat -->
+        <int type="int" n="2">  0 </int>                                           <!--  2 immat -->
+        <int type="int" n="3">  0 </int>                                           <!--  3 immat -->
+        <int type="int" n="4">  0 </int>                                           <!--  4 immat -->
+        <int type="int" n="5">  0 </int>                                           <!--  5 immat -->
+        <int type="bool" n="6" alias="/smoke/active"> 0 </int>                     <!--  6 start smoke -->
+        <int type="int" n="7" alias="smoke/particlepersec"> 50 </int>              <!--  7 particlepersec -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>           <!-- 10 reserved for bombable mode -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m"> 0 </float>                      <!-- altitude for MP shadow -->
+        <float n="3" alias="/smoke/colors/knob-red">1</float>                      <!-- 3 smoke mixer red setting -->
+        <float n="4" alias="/smoke/colors/knob-green">1</float>                    <!-- 4 smoke mixer green setting -->
+        <float n="5" alias="/smoke/colors/knob-blue">1</float>                     <!-- 5 smoke mixer blue setting -->
+        <string n="9" type="string" />                                             <!-- string[9] reserved for bombable mode -->
+      </generic>
+    </multiplay>
+
+    <help>
+      <title>c421</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close door</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/c421-menu.xml"/>
+
+  </sim>
+ 
+  <controls>
+    <gear>
+      <brake-parking type="double">1</brake-parking>
+    </gear>
+  </controls>
+
+  <input>
+    <keyboard include="Nasal/c421-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <doors>
+      <file>Aircraft/Cessna-421-Golden-Eagle/Nasal/doors.nas</file>
+    </doors>
+    <c421>
+      <file>Aircraft/Cessna-421-Golden-Eagle/Nasal/light.nas</file>
+      <file>Aircraft/Cessna-421-Golden-Eagle/Nasal/liveries.nas</file>
+      <file>Aircraft/Cessna-421-Golden-Eagle/Nasal/immat.nas</file>
+    </c421>
+  </nasal>
+   
+</PropertyList>
+

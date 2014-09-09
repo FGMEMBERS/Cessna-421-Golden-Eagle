@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList include="c421-base.xml">
+
+  <sim>
+
+    <description>Cessna 421 Golden Eagle (YASim)</description>
+    <author>Emmanuel BARANGER (3D/FDM)</author>
+    <flight-model archive="y">yasim</flight-model>
+    <aero archive="y">c421-yasim</aero>
+
+  </sim>
+
+</PropertyList>
