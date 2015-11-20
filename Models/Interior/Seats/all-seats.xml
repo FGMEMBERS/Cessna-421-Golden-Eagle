@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -2.15822 </x-m>
+      <y-m> -0.36423 </y-m>
+      <z-m> -0.36858 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -2.15822 </x-m>
+      <y-m>  0.36423 </y-m>
+      <z-m> -0.36858 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -1.57379 </x-m>
+      <y-m> -0.36400 </y-m>
+      <z-m> -0.45920 </z-m>
+      <heading-deg> 180 </heading-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -1.57379 </x-m>
+      <y-m>  0.36400 </y-m>
+      <z-m> -0.45920 </z-m>
+      <heading-deg> 180 </heading-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.56812 </x-m>
+      <y-m> -0.36423 </y-m>
+      <z-m> -0.45889 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -0.56812 </x-m>
+      <y-m>  0.36423 </y-m>
+      <z-m> -0.45889 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m>  0.64724 </x-m>
+      <y-m> -0.25398 </y-m>
+      <z-m> -0.39502 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m>  0.64724 </x-m>
+      <y-m>  0.25398 </y-m>
+      <z-m> -0.39502 </z-m>
+    </offsets>
+  </model>
+  
+</PropertyList>
