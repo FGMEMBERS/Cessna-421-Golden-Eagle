@@ -7,6 +7,64 @@
       <label>Cessna 421 Golden Eagle</label>
       <enabled type="bool">true</enabled>
       <item>
+        <label>Autostart</label>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/electric/battery-switch</property>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/lighting/instrument-lights</property>
+          <value>1</value>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/lighting/landing-lights</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/lighting/nav-lights</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/lighting/strobe-lights</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/anti-ice/engine[0]/carb-heat</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/anti-ice/engine[1]/carb-heat</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/engines/engine[0]/fuel-pump</property>
+        </binding>
+        <binding>
+          <command>property-toggle</command>
+          <property>/controls/engines/engine[1]/fuel-pump</property>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/engines/engine[0]/magnetos</property>
+          <value>3</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/engines/engine[1]/magnetos</property>
+          <value>3</value>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>controls.startEngine(0,0)</script>
+        </binding>
+        <binding>
+          <command>nasal</command>
+          <script>gui.popupTip("Press 's' to start")</script>
+        </binding>
+      </item>
+      <item>
         <label>Select Livery</label>
         <binding>
           <command>nasal</command>
@@ -26,4 +84,3 @@
   </default>
 
 </PropertyList>
-

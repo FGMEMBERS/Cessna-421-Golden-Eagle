@@ -1,47 +1,56 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?> 
 
 <PropertyList>
 
   <path>alt.ac</path>
- 
+
   <animation>
-    <object-name>ALTface</object-name>
-    <object-name>needle100</object-name>
-    <object-name>needle1000</object-name>
-    <object-name>needle10000</object-name>
-    <object-name>inhg</object-name>
-    <object-name>InhgKnob</object-name>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <object-name>roue100</object-name>
+    <object-name>roue1000</object-name>
+    <object-name>roue10000</object-name>
+    <object-name>roue1</object-name>
+    <object-name>roue2</object-name>
+    <object-name>roue3</object-name>
+    <object-name>roue4</object-name>
+    <object-name>bouton</object-name>
+    <object-name>inhg.up</object-name>
+    <object-name>inhg.dn</object-name>
 
     <object-name>vitre</object-name>
   </animation>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Cessna-421-Golden-Eagle/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitre</object-name>
-  </animation>
-
+  </effect>
+  
   <animation>
     <type>material</type>
-    <object-name>ALTface</object-name>
-    <object-name>needle100</object-name>
-    <object-name>needle1000</object-name>
-    <object-name>needle10000</object-name>
-    <object-name>inhg</object-name>
-    <object-name>InhgKnob</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <object-name>roue100</object-name>
+    <object-name>roue1000</object-name>
+    <object-name>roue10000</object-name>
+    <object-name>roue1</object-name>
+    <object-name>roue2</object-name>
+    <object-name>roue3</object-name>
+    <object-name>roue4</object-name>
     <emission>
+      <factor-prop>/controls/lighting/instrument-lights</factor-prop>
       <red>   0.50 </red>
       <green> 0.25 </green>
       <blue>  0.25 </blue>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
     </emission>
   </animation>
- 
+
   <animation>
     <type>rotate</type>
-    <object-name>needle100</object-name>
-    <property>instrumentation/altimeter/indicated-altitude-ft</property>
+    <object-name>needle</object-name>
+    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
     <factor> 0.36 </factor>
     <axis>
       <x> -1 </x>
@@ -52,74 +61,137 @@
 
   <animation>
     <type>rotate</type>
-    <object-name>needle1000</object-name>
-    <property>instrumentation/altimeter/indicated-altitude-ft</property>
+    <object-name>roue100</object-name>
+    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
+    <factor> 0.36 </factor>
+    <center>
+      <x-m> -0.00996 </x-m>
+      <y-m>  0.00721 </y-m>
+      <z-m>  0.00000 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>roue1000</object-name>
+    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
     <factor> 0.036 </factor>
+    <center>
+      <x-m> -0.00996 </x-m>
+      <y-m> -0.00639 </y-m>
+      <z-m>  0.00096 </z-m>
+    </center>
     <axis>
-      <x> -1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
-    <object-name>needle10000</object-name>
-    <property>instrumentation/altimeter/indicated-altitude-ft</property>
+    <object-name>roue10000</object-name>
+    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
     <factor> 0.0036 </factor>
+    <center>
+      <x-m> -0.00996 </x-m>
+      <y-m> -0.01616 </y-m>
+      <z-m>  0.00096 </z-m>
+    </center>
     <axis>
-      <x> -1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Pressure in millibar -->
+  <animation>
+    <type>rotate</type>
+    <object-name>roue1</object-name>
+    <property>/instrumentation/altimeter/millibar/unit1</property>
+    <factor> 36 </factor>
+    <center>
+      <x-m> -0.01075 </x-m>
+      <y-m>  0.00669 </y-m>
+      <z-m> -0.02588 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
-    <object-name>inhg</object-name>
-    <property>instrumentation/altimeter/setting-inhg</property>
-    <interpolation>
-      <entry><ind> 31.0 </ind><dep>   0 </dep></entry>
-      <entry><ind> 27.5 </ind><dep> 350 </dep></entry>
-    </interpolation>
+    <object-name>roue2</object-name>
+    <property>/instrumentation/altimeter/millibar/unit10</property>
+    <factor> 36 </factor>
+    <center>
+      <x-m> -0.01075 </x-m>
+      <y-m>  0.00122 </y-m>
+      <z-m> -0.02588 </z-m>
+    </center>
     <axis>
-      <x> -1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>roue3</object-name>
+    <property>/instrumentation/altimeter/millibar/unit100</property>
+    <factor> 36 </factor>
+    <center>
+      <x-m> -0.01075 </x-m>
+      <y-m> -0.00417 </y-m>
+      <z-m> -0.02588 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>roue4</object-name>
+    <property>/instrumentation/altimeter/millibar/unit1000</property>
+    <factor> 36 </factor>
+    <center>
+      <x-m> -0.01075 </x-m>
+      <y-m> -0.00964 </y-m>
+      <z-m> -0.02588 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>InhgKnob</object-name>
+    <object-name>inhg.dn</object-name>
+    <visible>0</visible>
     <action>
       <button>0</button>
       <repeatable>true</repeatable>
-      <interval-sec>0.1</interval-sec>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/altimeter/setting-inhg</property>
-        <step>  0.01 </step>
-        <min>  27.50 </min>
-        <max>  31.00 </max>
-        <wrap>  0.00 </wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>InhgKnob</object-name>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <interval-sec>0.1</interval-sec>
       <binding>
         <command>property-adjust</command>
         <property>instrumentation/altimeter/setting-inhg</property>
         <step> -0.01 </step>
-        <min>  27.50 </min>
-        <max>  31.00 </max>
+        <min>  27.90 </min>
+        <max>  31.40 </max>
         <wrap>  0.00 </wrap>
       </binding>
     </action>
@@ -127,15 +199,35 @@
 
   <animation>
     <type>pick</type>
-    <object-name>InhgKnob</object-name>
+    <object-name>inhg.dn</object-name>
+    <visible>0</visible>
     <action>
-      <button>3</button>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>instrumentation/altimeter/setting-inhg</property>
+        <step> -0.10 </step>
+        <min>  27.90 </min>
+        <max>  31.40 </max>
+        <wrap>  0.00 </wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>inhg.up</object-name>
+    <visible>0</visible>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
       <binding>
         <command>property-adjust</command>
         <property>instrumentation/altimeter/setting-inhg</property>
         <step> 0.01 </step>
-        <min> 27.50 </min>
-        <max> 31.00 </max>
+        <min> 27.90 </min>
+        <max> 31.40 </max>
         <wrap> 0.00 </wrap>
       </binding>
     </action>
@@ -143,16 +235,18 @@
 
   <animation>
     <type>pick</type>
-    <object-name>InhgKnob</object-name>
+    <object-name>inhg.up</object-name>
+    <visible>0</visible>
     <action>
-      <button>4</button>
+      <button>1</button>
+      <repeatable>true</repeatable>
       <binding>
         <command>property-adjust</command>
         <property>instrumentation/altimeter/setting-inhg</property>
-        <step> -0.01 </step>
-        <min>  27.50 </min>
-        <max>  31.00 </max>
-        <wrap>  0.00  </wrap>
+        <step> 0.10 </step>
+        <min> 27.90 </min>
+        <max> 31.40 </max>
+        <wrap> 0.00 </wrap>
       </binding>
     </action>
   </animation>

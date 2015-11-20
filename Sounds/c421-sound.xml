@@ -9,6 +9,11 @@
       <name>engstart</name>
       <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/starter.wav</path>
       <property>/engines/engine[0]/cranking</property>
+      <position>
+        <x> -2.69222 </x>
+        <y> -2.21025 </y>
+        <z> -0.65395 </z>
+      </position>
       <volume>
         <offset>-0.4</offset>
       </volume>
@@ -26,6 +31,11 @@
           <property>/engines/engine[0]/running</property>
         </not>
       </condition>
+      <position>
+        <x> -2.69222 </x>
+        <y> -2.21025 </y>
+        <z> -0.65395 </z>
+      </position>
       <volume>
         <offset>-0.5</offset>
       </volume>
@@ -41,6 +51,11 @@
       <name>cough</name>
       <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/starter.wav</path>
       <property>/engines/engine[0]/running</property>
+      <position>
+        <x> -2.69222 </x>
+        <y> -2.21025 </y>
+        <z> -0.65395 </z>
+      </position>
       <volume>
         <offset>-0.50</offset>
       </volume>
@@ -53,73 +68,157 @@
     </crank>
 
     <engine>
-      <name>engine</name>
+      <name>engine-internal</name>
       <mode>looped</mode>
-      <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/running.wav</path>
+      <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/running-in.wav</path>
       <condition>
-        <property>/engines/engine[0]/running</property>
-        <less-than>
-          <property>/engines/engine[0]/rpm</property>
-          <value>5000</value>
-        </less-than>
+        <and>
+          <property>sim/current-view/internal</property>
+          <greater-than>
+            <property>engines/engine[0]/rpm</property>
+            <value>100</value>
+          </greater-than>
+        </and>
       </condition>
-      <volume>
-        <property>/engines/engine[0]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.2</min>
-        <max>1.0</max>
-        <offset>0.0</offset>
-      </volume>
       <pitch>
         <property>/engines/engine[0]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.0</min>
-        <max>1.0</max>
+        <factor> 0.0005 </factor>
+        <min> 0 </min>
+        <max> 2 </max>
+        <offset> 0.1 </offset>
       </pitch>
+      <position>
+        <x> -2.69222 </x>
+        <y> -2.21025 </y>
+        <z> -0.65395 </z>
+      </position>
+      <volume>
+        <property>/engines/engine[0]/rpm</property>
+        <factor> 0.0005 </factor>
+        <min> 0 </min>
+        <max> 2 </max>
+        <offset> 0.5 </offset>
+      </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </engine>
-
+    
     <engine>
-      <name>enginerun</name>
+      <name>engine-external</name>
       <mode>looped</mode>
-      <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/running.wav</path>
+      <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/running-out.wav</path>
       <condition>
-        <property>/engines/engine[0]/running</property>
-        <greater-than>
-          <property>/engines/engine[0]/rpm</property>
-          <value>400</value>
-        </greater-than>
+        <and>
+          <not><property>sim/current-view/internal</property></not>
+          <greater-than>
+            <property>engines/engine[0]/rpm</property>
+            <value>100</value>
+          </greater-than>
+        </and>
       </condition>
+      <pitch>
+        <property>engines/engine[0]/rpm</property>
+        <factor> 0.0005 </factor>
+        <min> 0 </min>
+        <max> 2 </max>
+        <offset> 0.10 </offset>
+      </pitch>
+      <position>
+        <x> -2.69222 </x>
+        <y> -2.21025 </y>
+        <z> -0.65395 </z>
+      </position>
       <volume>
         <property>/engines/engine[0]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.0</min>
-        <max>1.00</max>
-        <offset>0.0</offset>
+        <factor> 0.00033 </factor>
+        <min> 0.2 </min>
+        <max> 1.0 </max>
+        <offset> 0 </offset>
       </volume>
-      <pitch>
-        <property>/engines/engine[0]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.0</min>
-        <max>1.0</max>
-      </pitch>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </engine>
 
+    <propeller>
+      <name>propeller-internal</name>
+      <mode>looped</mode>
+      <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/propeller-in.wav</path>
+      <condition>
+        <property>/engines/engine[0]/cranking</property>
+        <not>
+          <property>/engines/engine[0]/running</property>
+        </not>
+      </condition>
+      <volume>
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min> 0.2 </min>
+        <max> 1.0 </max>
+      </volume>
+      <volume>
+        <factor> 0.5 </factor>
+      </volume>
+      <pitch>
+        <property>/engines/engine[0]/mp-osi</property>
+        <factor> 0.0036 </factor>
+        <min> 0.5 </min>
+        <max> 2.0 </max>
+        <offset> 0.9 </offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </propeller>
+    
+    <propeller>
+      <name>propeller-external</name>
+      <mode>looped</mode>
+      <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/propeller-out.wav</path>
+      <condition>
+        <and>
+          <not><property>sim/current-view/internal</property></not>
+          <greater-than>
+            <property>engines/engine[0]/rpm</property>
+            <value>100</value>
+          </greater-than>
+        </and>
+      </condition>
+      <volume>
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min> 0.2 </min>
+        <max> 1.0 </max>
+      </volume>
+      <volume>
+        <factor> 0.5 </factor>
+      </volume>
+      <pitch>
+        <property>/engines/engine[0]/mp-osi</property>
+        <factor> 0.0036 </factor>
+        <min> 0.5 </min>
+        <max> 2.0 </max>
+        <offset> 0.9 </offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </propeller>
+    
     <!-- Moteur 2 -->
     <crank>
       <name>engstart</name>
       <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/starter.wav</path>
       <property>/engines/engine[1]/cranking</property>
+      <position>
+        <x> -2.69222 </x>
+        <y>  2.21025 </y>
+        <z> -0.65395 </z>
+      </position>
       <volume>
         <offset>-0.4</offset>
       </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </crank>
-
+    
     <crank>
       <name>crank</name>
       <mode>looped</mode>
@@ -130,6 +229,11 @@
           <property>/engines/engine[1]/running</property>
         </not>
       </condition>
+      <position>
+        <x> -2.69222 </x>
+        <y>  2.21025 </y>
+        <z> -0.65395 </z>
+      </position>
       <volume>
         <offset>-0.5</offset>
       </volume>
@@ -140,11 +244,16 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </crank>
-
+    
     <crank>
       <name>cough</name>
       <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/starter.wav</path>
       <property>/engines/engine[1]/running</property>
+      <position>
+        <x> -2.69222 </x>
+        <y>  2.21025 </y>
+        <z> -0.65395 </z>
+      </position>
       <volume>
         <offset>-0.50</offset>
       </volume>
@@ -155,63 +264,142 @@
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </crank>
-
+    
     <engine>
-      <name>engine</name>
+      <name>engine-internal</name>
       <mode>looped</mode>
-      <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/running.wav</path>
+      <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/running-in.wav</path>
       <condition>
-        <property>/engines/engine[1]/running</property>
-        <less-than>
-        <property>/engines/engine[1]/rpm</property>
-        <value>5000</value>
-        </less-than>
+        <and>
+          <property>sim/current-view/internal</property>
+          <greater-than>
+            <property>engines/engine[1]/rpm</property>
+            <value>100</value>
+          </greater-than>
+        </and>
       </condition>
-      <volume>
-        <property>/engines/engine[1]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.2</min>
-        <max>1.0</max>
-        <offset>0.0</offset>
-      </volume>
       <pitch>
         <property>/engines/engine[1]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.0</min>
-        <max>1.0</max>
+        <factor> 0.0005 </factor>
+        <min> 0 </min>
+        <max> 2 </max>
+        <offset> 0.1 </offset>
       </pitch>
+      <position>
+        <x> -2.69222 </x>
+        <y>  2.21025 </y>
+        <z> -0.65395 </z>
+      </position>
+      <volume>
+        <property>/engines/engine[1]/rpm</property>
+        <factor> 0.0005 </factor>
+        <min> 0 </min>
+        <max> 2 </max>
+        <offset> 0.5 </offset>
+      </volume>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </engine>
-
+    
     <engine>
-      <name>enginerun</name>
+      <name>engine-external</name>
       <mode>looped</mode>
-      <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/running.wav</path>
+      <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/running-out.wav</path>
       <condition>
-        <property>/engines/engine[1]/running</property>
-        <greater-than>
-        <property>/engines/engine[1]/rpm</property>
-        <value>400</value>
-        </greater-than>
+        <and>
+          <not><property>sim/current-view/internal</property></not>
+          <greater-than>
+            <property>engines/engine[1]/rpm</property>
+            <value>100</value>
+          </greater-than>
+        </and>
       </condition>
+      <pitch>
+        <property>engines/engine[1]/rpm</property>
+        <factor> 0.0005 </factor>
+        <min> 0 </min>
+        <max> 2 </max>
+        <offset> 0.10 </offset>
+      </pitch>
+      <position>
+        <x> -2.69222 </x>
+        <y>  2.21025 </y>
+        <z> -0.65395 </z>
+      </position>
       <volume>
         <property>/engines/engine[1]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.0</min>
-        <max>1.00</max>
-        <offset>0.0</offset>
+        <factor> 0.00033 </factor>
+        <min> 0.2 </min>
+        <max> 1.0 </max>
+        <offset> 0 </offset>
       </volume>
-      <pitch>
-        <property>/engines/engine[1]/rpm</property>
-        <factor>0.00033</factor>
-        <min>0.0</min>
-        <max>1.0</max>
-      </pitch>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>
     </engine>
-
+    
+    <propeller>
+      <name>propeller-internal</name>
+      <mode>looped</mode>
+      <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/propeller-in.wav</path>
+      <condition>
+        <property>/engines/engine[1]/cranking</property>
+        <not>
+          <property>/engines/engine[1]/running</property>
+        </not>
+      </condition>
+      <volume>
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min> 0.2 </min>
+        <max> 1.0 </max>
+      </volume>
+      <volume>
+        <factor> 0.5 </factor>
+      </volume>
+      <pitch>
+        <property>/engines/engine[1]/mp-osi</property>
+        <factor> 0.0036 </factor>
+        <min> 0.5 </min>
+        <max> 2.0 </max>
+        <offset> 0.9 </offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </propeller>
+    
+    <propeller>
+      <name>propeller-external</name>
+      <mode>looped</mode>
+      <path>Aircraft/Cessna-421-Golden-Eagle/Sounds/propeller-out.wav</path>
+      <condition>
+        <and>
+          <not><property>sim/current-view/internal</property></not>
+          <greater-than>
+            <property>engines/engine[1]/rpm</property>
+            <value>100</value>
+          </greater-than>
+        </and>
+      </condition>
+      <volume>
+        <property>/orientation/alpha-deg</property>
+        <type>log</type>
+        <min> 0.2 </min>
+        <max> 1.0 </max>
+      </volume>
+      <volume>
+        <factor> 0.5 </factor>
+      </volume>
+      <pitch>
+        <property>/engines/engine[1]/mp-osi</property>
+        <factor> 0.0036 </factor>
+        <min> 0.5 </min>
+        <max> 2.0 </max>
+        <offset> 0.9 </offset>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>
+    </propeller>
+    
     <rumble>
       <name>rumble</name>
       <mode>looped</mode>

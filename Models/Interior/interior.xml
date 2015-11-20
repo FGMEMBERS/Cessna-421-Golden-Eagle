@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -19,27 +19,26 @@
     <object-name>intportevitre</object-name>
   </animation>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Cessna-421-Golden-Eagle/Models/Effects/Glass/glass</inherits-from>
     <object-name>intvitres</object-name>
     <object-name>intportevitre</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
+  </effect>
+  
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>intvitres</object-name>
     <object-name>intportevitre</object-name>
-  </animation>
-
+  </effect>
+  
   <!-- Pilote -->
   <model>
     <path>Aircraft/Cessna-421-Golden-Eagle/Models/Pilot/pilot.xml</path>
     <offsets>
       <x-m> -2.487 </x-m>
       <y-m> -0.360 </y-m>
-      <z-m> -0.315 </z-m>
+      <z-m> -0.395 </z-m>
     </offsets>
   </model>
 
@@ -49,11 +48,38 @@
     <offsets>
       <x-m> -3.035 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m> -0.376 </z-m>
+      <z-m> -0.330 </z-m>
     </offsets>
   </model>
 
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Seats/all-seats.xml</path>
+  </model>
+  
   <!-- Porte -->
+  <animation>
+    <name>IntToutesLesPortes</name>
+    <object-name>intporteH</object-name>
+    <object-name>intporteB</object-name>
+    <object-name>intportevitre</object-name>
+    <object-name>intportetour</object-name>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>IntToutesLesPortes</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
   <animation>
     <name>IntPorteHaute</name>
     <object-name>intporteH</object-name>
@@ -64,7 +90,7 @@
   <animation>
     <type>rotate</type>
     <object-name>IntPorteHaute</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> -110 </factor>
     <axis>
       <x1-m> -0.163 </x1-m>
@@ -79,7 +105,7 @@
   <animation>
     <type>rotate</type>
     <object-name>intporteB</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> 125 </factor>
     <axis>
       <x1-m> -0.185 </x1-m>
@@ -92,4 +118,3 @@
   </animation>
 
 </PropertyList>
-

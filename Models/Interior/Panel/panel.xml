@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -7,6 +7,8 @@
   <animation>
     <!-- Objets opaques -->
     <object-name>panel</object-name>
+    <object-name>panel2</object-name>
+    <object-name>side</object-name>
     <object-name>mancheG</object-name>
     <object-name>mancheD</object-name>
     <object-name>throttleG</object-name>
@@ -19,70 +21,315 @@
     <!-- Objets transparents -->
   </animation>
 
+  <!-- ALT -->
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m>  0.113 </x-m>
+      <y-m> -0.267 </y-m>
+      <z-m>  0.326 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> 0.113 </x-m>
+      <y-m> 0.656 </y-m>
+      <z-m> 0.221 </z-m>
+    </offsets>
+  </model>
+  
   <!-- ASI -->
   <model>
     <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/asi/asi.xml</path>
     <offsets>
       <x-m>  0.112 </x-m>
-      <y-m> -0.450 </y-m>
-      <z-m>  0.327 </z-m>
+      <y-m> -0.490 </y-m>
+      <z-m>  0.321 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/asi/asi.xml</path>
     <offsets>
       <x-m> 0.112 </x-m>
-      <y-m> 0.263 </y-m>
-      <z-m> 0.327 </z-m>
+      <y-m> 0.447 </y-m>
+      <z-m> 0.222 </z-m>
     </offsets>
   </model>
-
-  <!-- AI -->
+  
+  <!-- CLOCK -->
   <model>
-    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/ai/ai.xml</path>
-    <offsets>
-      <x-m>  0.111 </x-m>
-      <y-m> -0.355 </y-m>
-      <z-m>  0.327 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/ai/ai.xml</path>
-    <offsets>
-      <x-m> 0.111 </x-m>
-      <y-m> 0.355 </y-m>
-      <z-m> 0.327 </z-m>
-    </offsets>
-  </model>
-
-  <!-- ALT -->
-  <model>
-    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/clock/clock.xml</path>
     <offsets>
       <x-m>  0.112 </x-m>
-      <y-m> -0.263 </y-m>
-      <z-m>  0.327 </z-m>
+      <y-m> -0.670 </y-m>
+      <z-m>  0.220 </z-m>
     </offsets>
   </model>
-
+  
+  <!-- COMPASS -->
   <model>
-    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/comp/comp.xml</path>
+    <offsets>
+      <x-m> 0.204 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.514 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/clock/clock.xml</path>
     <offsets>
       <x-m> 0.112 </x-m>
-      <y-m> 0.450 </y-m>
-      <z-m> 0.327 </z-m>
+      <y-m> 0.525 </y-m>
+      <z-m> 0.342 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- EGT OAT -->
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/EGT-OAT/EGT-OAT.xml</path>
+    <offsets>
+      <x-m>  0.112 </x-m>
+      <y-m> -0.153 </y-m>
+      <z-m>  0.344 </z-m>
     </offsets>
   </model>
 
+  <!-- FUEL GAUHE -->  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/FuelGauge/FuelGauge0.xml</path>
+    <offsets>
+      <x-m>  0.112 </x-m>
+      <y-m> -0.053 </y-m>
+      <z-m>  0.344 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/FuelGauge/FuelGauge1.xml</path>
+    <offsets>
+      <x-m> 0.112 </x-m>
+      <y-m> 0.047 </y-m>
+      <z-m> 0.344 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- KAP140 -->  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/kap140/KAP140TwoAxisAlt.xml</path>
+    <offsets>
+      <x-m>  0.111 </x-m>
+      <y-m> -0.120 </y-m>
+      <z-m>  0.071 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- KFC 200 - KI 252a-->
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/kfc200/ki252a.xml</path>
+    <offsets>
+      <x-m>  0.112 </x-m>
+      <y-m> -0.380 </y-m>
+      <z-m>  0.211 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/kfc200/ki252a.xml</path>
+    <offsets>
+      <x-m> 0.112 </x-m>
+      <y-m> 0.551 </y-m>
+      <z-m> 0.152 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- KFC 200 - KI 256 -->
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/kfc200/ki256.xml</path>
+    <offsets>
+      <x-m>  0.112 </x-m>
+      <y-m> -0.380 </y-m>
+      <z-m>  0.318 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/kfc200/ki256.xml</path>
+    <offsets>
+      <x-m> 0.112 </x-m>
+      <y-m> 0.551 </y-m>
+      <z-m> 0.259 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- KI206 -->
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/ki206/ki206.xml</path>
+    <offsets>
+      <x-m>  0.116 </x-m>
+      <y-m> -0.267 </y-m>
+      <z-m>  0.224 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/ki206/ki206.xml</path>
+    <offsets>
+      <x-m> 0.116 </x-m>
+      <y-m> 0.349 </y-m>
+      <z-m> 0.115 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- KNS80 -->
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/kns80/kns80.xml</path>
+    <offsets>
+      <x-m>  0.111 </x-m>
+      <y-m> -0.120 </y-m>
+      <z-m>  0.204 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- KT76A -->
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/KT76A/KT76A.xml</path>
+    <offsets>
+      <x-m> 0.109 </x-m>
+      <y-m> 0.200 </y-m>
+      <z-m> 0.110 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- KX165 -->
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/kx165/kx165-1.xml</path>
+    <offsets>
+      <x-m> 0.104 </x-m>
+      <y-m> 0.200 </y-m>
+      <z-m> 0.213 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/kx165/kx165-2.xml</path>
+    <offsets>
+      <x-m> 0.104 </x-m>
+      <y-m> 0.200 </y-m>
+      <z-m> 0.159 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- KY196 -->
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/ky196/ky196-comm1.xml</path>
+    <offsets>
+      <x-m>  0.110 </x-m>
+      <y-m> -0.120 </y-m>
+      <z-m>  0.145 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/ky196/ky196-comm2.xml</path>
+    <offsets>
+      <x-m>  0.110 </x-m>
+      <y-m> -0.120 </y-m>
+      <z-m>  0.110 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- MPFUEL -->
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/MPFuel/MPFuel.xml</path>
+    <offsets>
+      <x-m>  0.112 </x-m>
+      <y-m> -0.590 </y-m>
+      <z-m>  0.276 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- OILGAUGE -->
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/OilGauge/OilGauge.xml</path>
+    <offsets>
+      <x-m> 0.112 </x-m>
+      <y-m> 0.147 </y-m>
+      <z-m> 0.344 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- RADAR ALT -->
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/radar-alt/kra10a.xml</path>
+    <offsets>
+      <x-m>  0.110 </x-m>
+      <y-m> -0.267 </y-m>
+      <z-m>  0.108 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- RPM -->
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/rpm/rpm.xml</path>
+    <offsets>
+      <x-m> 0.112 </x-m>
+      <y-m> 0.247 </y-m>
+      <z-m> 0.344 </z-m>
+    </offsets>
+  </model>
+  
+  <!-- SWITCHS -->
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/Switch/instr-lights.xml</path>
+    <offsets>
+      <x-m>  0.170 </x-m>
+      <y-m> -0.723 </y-m>
+      <z-m> -0.109 </z-m>
+      <pitch-deg> -90 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/Switch/land-lights.xml</path>
+    <offsets>
+      <x-m>  0.170 </x-m>
+      <y-m> -0.687 </y-m>
+      <z-m> -0.109 </z-m>
+      <pitch-deg> -90 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/Switch/nav-lights.xml</path>
+    <offsets>
+      <x-m>  0.170 </x-m>
+      <y-m> -0.650 </y-m>
+      <z-m> -0.109 </z-m>
+      <pitch-deg> -90 </pitch-deg>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/Switch/strobe-lights.xml</path>
+    <offsets>
+      <x-m>  0.170 </x-m>
+      <y-m> -0.613 </y-m>
+      <z-m> -0.109 </z-m>
+      <pitch-deg> -90 </pitch-deg>
+    </offsets>
+  </model>
+  
   <!-- TURN -->
   <model>
     <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/turn/turn.xml</path>
     <offsets>
       <x-m>  0.112 </x-m>
-      <y-m> -0.450 </y-m>
-      <z-m>  0.243 </z-m>
+      <y-m> -0.378 </y-m>
+      <z-m>  0.108 </z-m>
     </offsets>
   </model>
 
@@ -90,27 +337,8 @@
     <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/turn/turn.xml</path>
     <offsets>
       <x-m> 0.112 </x-m>
-      <y-m> 0.263 </y-m>
-      <z-m> 0.243 </z-m>
-    </offsets>
-  </model>
-
-  <!-- HDG -->
-  <model>
-    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/hdg/hdg.xml</path>
-    <offsets>
-      <x-m>  0.111 </x-m>
-      <y-m> -0.355 </y-m>
-      <z-m>  0.243 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/hdg/hdg.xml</path>
-    <offsets>
-      <x-m> 0.111 </x-m>
-      <y-m> 0.355 </y-m>
-      <z-m> 0.243 </z-m>
+      <y-m> 0.446 </y-m>
+      <z-m> 0.115 </z-m>
     </offsets>
   </model>
 
@@ -118,21 +346,21 @@
   <model>
     <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
     <offsets>
-      <x-m>  0.112 </x-m>
-      <y-m> -0.263 </y-m>
-      <z-m>  0.243 </z-m>
+      <x-m>  0.113 </x-m>
+      <y-m> -0.488 </y-m>
+      <z-m>  0.108 </z-m>
     </offsets>
   </model>
-
+  
   <model>
     <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
     <offsets>
-      <x-m> 0.112 </x-m>
-      <y-m> 0.450 </y-m>
-      <z-m> 0.243 </z-m>
+      <x-m> 0.113 </x-m>
+      <y-m> 0.656 </y-m>
+      <z-m> 0.117 </z-m>
     </offsets>
   </model>
-
+  
   <!-- Throttles -->
   <animation>
     <type>rotate</type>
@@ -142,7 +370,7 @@
     <center>
       <x-m>  0.165 </x-m>
       <y-m> -0.065 </y-m>
-      <z-m>  0.009 </z-m>
+      <z-m> -0.131 </z-m>
     </center>
     <axis>
       <x>  0 </x>
@@ -159,7 +387,7 @@
     <center>
       <x-m>  0.165 </x-m>
       <y-m> -0.041 </y-m>
-      <z-m>  0.009 </z-m>
+      <z-m> -0.131 </z-m>
     </center>
     <axis>
       <x>  0 </x>
@@ -177,7 +405,7 @@
     <center>
       <x-m>  0.165 </x-m>
       <y-m> -0.012 </y-m>
-      <z-m>  0.009 </z-m>
+      <z-m> -0.131 </z-m>
     </center>
     <axis>
       <x>  0 </x>
@@ -192,9 +420,9 @@
     <property>controls/engines/engine[1]/mixture</property>
     <factor> 90 </factor>
     <center>
-      <x-m> 0.165 </x-m>
-      <y-m> 0.012 </y-m>
-      <z-m> 0.009 </z-m>
+      <x-m>  0.165 </x-m>
+      <y-m>  0.012 </y-m>
+      <z-m> -0.131 </z-m>
     </center>
     <axis>
       <x>  0 </x>
@@ -210,9 +438,9 @@
     <property>controls/engines/engine[0]/propeller-pitch</property>
     <factor> 90 </factor>
     <center>
-      <x-m> 0.165 </x-m>
-      <y-m> 0.041 </y-m>
-      <z-m> 0.009 </z-m>
+      <x-m>  0.165 </x-m>
+      <y-m>  0.041 </y-m>
+      <z-m> -0.131 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -227,9 +455,9 @@
     <property>controls/engines/engine[1]/propeller-pitch</property>
     <factor> 90 </factor>
     <center>
-      <x-m> 0.165 </x-m>
-      <y-m> 0.065 </y-m>
-      <z-m> 0.009 </z-m>
+      <x-m>  0.165 </x-m>
+      <y-m>  0.065 </y-m>
+      <z-m> -0.131 </z-m>
     </center>
     <axis>
       <x> 0 </x>
@@ -249,9 +477,9 @@
       <entry><ind>  1 </ind><dep> -50 </dep></entry>
     </interpolation>
     <center>
-      <x-m>  0.111 </x-m>
-      <y-m> -0.355 </y-m>
-      <z-m>  0.189 </z-m>
+      <x-m>  0.11112 </x-m>
+      <y-m> -0.38043 </y-m>
+      <z-m>  0.00682 </z-m>
     </center>
     <axis>
       <x> 1 </x>
@@ -270,9 +498,9 @@
       <entry><ind>  1 </ind><dep> -50 </dep></entry>
     </interpolation>
     <center>
-      <x-m> 0.111 </x-m>
-      <y-m> 0.355 </y-m>
-      <z-m> 0.189 </z-m>
+      <x-m> 0.11112 </x-m>
+      <y-m> 0.37935 </y-m>
+      <z-m> 0.00681 </z-m>
     </center>
     <axis>
       <x> 1 </x>
@@ -304,4 +532,3 @@
   </animation>
 
 </PropertyList>
-

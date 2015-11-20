@@ -9,5 +9,3 @@ texturehekijah
 These liveries were made by : Philippe BROCORENS 2012
 
 Thanks to him
-
-
