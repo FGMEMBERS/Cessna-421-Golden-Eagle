@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <autopilot>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/kap140/autopilot/KAP140.xml</path>
+  </autopilot>
+  <property-rule n="100">
+    <name>FiltersOnly</name>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/Interior/Panel/Instruments/kap140/autopilot/NAVandGSfilters.xml</path>
+  </property-rule>
+  <electrical>
+    <!-- null electrical system path here so we can use a nasal based -->
+    <!-- model defined later in the nasal section of this file. -->
+    <path></path>
+  </electrical>
+  
+</PropertyList>

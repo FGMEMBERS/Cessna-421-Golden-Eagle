@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <lighting>
+    <landing-lights type="bool">false</landing-lights>
+    <nav-lights type="bool">false</nav-lights>
+    <strobe-lights type="bool">false</strobe-lights>
+    <instrument-lights>0</instrument-lights>
+  </lighting>
+  
+  <electric>
+    <battery-switch>0</battery-switch>
+    <generator>0</generator>
+    <engines>
+      <engine n="0">
+        <fuel-pump>0</fuel-pump>
+      </engine>
+      <engine n="1">
+        <fuel-pump>0</fuel-pump>
+      </engine>
+    </engines>
+  </electric>
+  
+  <gear>
+    <brake-parking type="double">1</brake-parking>
+  </gear>
+  
+</PropertyList>

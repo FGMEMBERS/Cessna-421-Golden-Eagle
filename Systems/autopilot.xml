@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <KAP140>
+    <settings>
+      <auto-pitch-trim type="bool">true</auto-pitch-trim>
+    </settings>
+  </KAP140>
+  
+</PropertyList>

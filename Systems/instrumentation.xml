@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <attitude-indicator>
+    <config>
+      <tumble-flag archive="y" type="bool">true</tumble-flag>
+    </config>
+  </attitude-indicator>
+  
+  <elt>
+    <on type="bool">false</on>
+    <armed type="bool">true</armed>
+    <test type="bool">false</test>
+  </elt>
+  
+  <encoder>
+    <serviceable type="bool">true</serviceable>
+    <name>encoder</name>
+    <number>0</number>
+  </encoder>
+  
+  <comm n="0">
+    <power-btn type="bool">false</power-btn>
+    <volume type="double">0</volume>
+  </comm>
+  
+  <nav n="0">
+    <power-btn type="bool">false</power-btn>
+    <volume type="double">0</volume>
+  </nav>
+  
+  <adf n="0">      
+    <power-btn type="bool">false</power-btn>
+    <volume type="double">0</volume>
+    <adf-btn type="bool">true</adf-btn>
+  </adf>
+  
+  <dme>
+    <name>dme</name>
+    <number>0</number>
+  </dme>     
+  
+  <nav-radio>
+    <name>nav</name>
+    <number>0</number>
+  </nav-radio>
+  
+</PropertyList>

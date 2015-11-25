@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
@@ -13,9 +13,9 @@
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
       
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-    
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+      
       crew_door.alias(float_0);
       passenger_door.alias(float_1);
     </load>
@@ -124,35 +124,11 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
-<!--
-    <diffuse>
-      <red-prop>diffuse/red</red-prop>
-      <green-prop>diffuse/green</green-prop>
-      <blue-prop>diffuse/blue</blue-prop>
-    </diffuse>
-
-    <ambient>
-      <red-prop>ambient/red</red-prop>
-      <green-prop>ambient/green</green-prop>
-      <blue-prop>ambient/blue</blue-prop>
-    </ambient>
--->
     <specular>
       <red-prop>specular/red</red-prop>
       <green-prop>specular/green</green-prop>
       <blue-prop>specular/blue</blue-prop>
     </specular>
-
-    <emission>
-      <red-prop>emission/red</red-prop>
-      <green-prop>emission/green</green-prop>
-      <blue-prop>emission/blue</blue-prop>
-    </emission>
-<!--
-    <shininess>
-      <shininess-prop>shininess</shininess-prop>
-    </shininess>
--->
   </animation>
 
   <effect>
@@ -186,32 +162,30 @@
     <object-name>antennes</object-name>
   </effect>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Cessna-421-Golden-Eagle/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitres</object-name>
     <object-name>portevitre</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
+  </effect>
+  
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>vitres</object-name>
     <object-name>portevitre</object-name>
-
     <object-name>propblurG</object-name>
     <object-name>propblurD</object-name>
     <object-name>propdiscG</object-name>
     <object-name>propdiscD</object-name>
-  </animation>
-
+  </effect>
+  
   <!-- Une ombre pour OSG -->
   <model>
     <path>Aircraft/Cessna-421-Golden-Eagle/Models/shadow.xml</path>
     <offsets>
-      <x-m>  0.000 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -1.660 </z-m>
+      <x-m>  0.00 </x-m>
+      <y-m>  0.00 </y-m>
+      <z-m> -1.66 </z-m>
     </offsets>
   </model>
 
@@ -223,14 +197,6 @@
   <!-- Immatriculatoin
   <model>
     <path>Aircraft/Cessna-421-Golden-Eagle/Models/Immat/immat.xml</path>
-    <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-      <roll-deg>    0 </roll-deg>
-      <pitch-deg>   0 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
-    </offsets>
   </model> -->
 
   <!-- Cranking effects -->
@@ -241,7 +207,7 @@
       <x-m> -2.265 </x-m>
       <y-m> -2.542 </y-m>
       <z-m> -0.987 </z-m>
-      <pitch-deg>  45 </pitch-deg>
+      <pitch-deg> 45 </pitch-deg>
     </offsets>
   </model>
 
@@ -252,7 +218,7 @@
       <x-m> -2.265 </x-m>
       <y-m>  2.542 </y-m>
       <z-m> -0.987 </z-m>
-      <pitch-deg>  45 </pitch-deg>
+      <pitch-deg> 45 </pitch-deg>
     </offsets>
   </model>
 
@@ -339,6 +305,12 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceCompleteG</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <center>
@@ -367,7 +339,7 @@
     <object-name>propdiscD</object-name>
     <condition>
       <greater-than>
-        <property>engines/engine[0]/rpm</property>
+        <property>engines/engine[1]/rpm</property>
         <value> 1100 </value>
       </greater-than>
     </condition>
@@ -379,11 +351,11 @@
     <condition>
     <and>
       <greater-than>
-        <property>engines/engine[0]/rpm</property>
+        <property>engines/engine[1]/rpm</property>
         <value> 500.000 </value>
       </greater-than>
       <less-than>
-        <property>engines/engine[0]/rpm</property>
+        <property>engines/engine[1]/rpm</property>
         <value> 1100.001 </value>
       </less-than>
     </and>
@@ -395,7 +367,7 @@
     <object-name>heliceD</object-name>
     <condition>
       <less-than>
-        <property>engines/engine[0]/rpm</property>
+        <property>engines/engine[1]/rpm</property>
         <value> 1100 </value>
       </less-than>
     </condition>
@@ -404,7 +376,13 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceCompleteD</object-name>
-    <property>engines/engine[0]/rpm</property>
+    <condition>
+      <greater-than>
+        <property>engines/engine[1]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
+    <property>engines/engine[1]/rpm</property>
     <factor> 1 </factor>
     <center>
       <x-m> -3.759 </x-m>
@@ -825,15 +803,36 @@
 
   <!-- Porte -->
   <animation>
+    <name>ToutesLesPortes</name>
+    <object-name>porteH</object-name>
+    <object-name>porteB</object-name>
+    <object-name>portevitre</object-name>
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <object-name>ToutesLesPortes</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
     <name>PorteHaute</name>
     <object-name>porteH</object-name>
     <object-name>portevitre</object-name>
   </animation>
-
+  
   <animation>
     <type>rotate</type>
     <object-name>PorteHaute</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> -110 </factor>
     <axis>
       <x1-m> -0.163 </x1-m>
@@ -848,7 +847,7 @@
   <animation>
     <type>rotate</type>
     <object-name>porteB</object-name>
-    <property>instrumentation/doors/crew/position-norm</property>
+    <property>sim/model/door-positions/crew/position-norm</property>
     <factor> 125 </factor>
     <axis>
       <x1-m> -0.185 </x1-m>
@@ -889,6 +888,15 @@
   </model>
 
   <model>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/light/StrobeLight.xml</path>
+    <offsets>
+      <x-m> -2.092 </x-m>
+      <y-m> -6.217 </y-m>
+      <z-m> -0.365 </z-m>
+    </offsets>
+  </model>
+  
+  <model>
     <path>Aircraft/Cessna-421-Golden-Eagle/Models/light/GreenLight.xml</path>
     <offsets>
       <x-m> -2.132 </x-m>
@@ -898,16 +906,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Cessna-421-Golden-Eagle/Models/light/StrobeWhite.xml</path>
-    <offsets>
-      <x-m> -2.092 </x-m>
-      <y-m> -6.217 </y-m>
-      <z-m> -0.365 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Cessna-421-Golden-Eagle/Models/light/StrobeWhite.xml</path>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/light/StrobeLight.xml</path>
     <offsets>
       <x-m> -2.092 </x-m>
       <y-m>  6.217 </y-m>
@@ -916,7 +915,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Cessna-421-Golden-Eagle/Models/light/StrobeWhite.xml</path>
+    <path>Aircraft/Cessna-421-Golden-Eagle/Models/light/StrobeLight.xml</path>
     <offsets>
       <x-m>  4.721 </x-m>
       <y-m>  0.000 </y-m>
@@ -925,4 +924,3 @@
   </model>
 
 </PropertyList>
-

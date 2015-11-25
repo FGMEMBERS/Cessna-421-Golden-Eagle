@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>FuelGauge.ac</path>
+
+  <animation>
+    <object-name>Bezel</object-name>
+    <object-name>Face</object-name>
+    <object-name>PtrL</object-name>
+    <object-name>PtrR</object-name>
+    
+    <object-name>vitre</object-name>
+  </animation>
+  
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Cessna-421-Golden-Eagle/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
+  <animation>
+    <type>material</type>
+    <object-name>Face</object-name>
+    <object-name>PtrL</object-name>
+    <object-name>PtrR</object-name>
+    <emission>
+      <factor-prop>/controls/lighting/instrument-lights</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.25 </green>
+      <blue>  0.25 </blue>
+    </emission>
+  </animation>
+  
+  <animation> 
+    <type>rotate</type>
+    <object-name>PtrL</object-name>
+    <property>/consumables/fuel/tank[0]/level-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 70 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.00000 </x-m>
+      <y-m> -0.03662 </y-m>
+      <z-m>  0.00540 </z-m>  
+    </center>
+    <axis> 
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>         
+ 
+  <animation> 
+    <type>rotate</type>
+    <object-name>PtrR</object-name>
+    <property>/consumables/fuel/tank[1]/level-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 70 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.00000 </x-m>
+      <y-m> 0.03768 </y-m>
+      <z-m> 0.00402 </z-m>  
+    </center>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>         
+ 
+</PropertyList>

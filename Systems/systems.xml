@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <electrical>
+    <outputs>
+      <KNS80 type="string">28</KNS80>
+      <comm type="string">28</comm>
+    </outputs>
+  </electrical>
+  
+</PropertyList>
