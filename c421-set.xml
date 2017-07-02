@@ -19,6 +19,22 @@
       <model type="int">   4 </model>
     </rating>
 
+    <tags>
+      <tag>transport</tag>
+      <tag>cessna</tag>
+      <tag>1960s</tag>
+      <tag>1970s</tag>
+      <tag>1980s</tag>
+      <tag>1990s</tag>
+      <tag>retractable-gear</tag>
+      <tag>ifr</tag>
+      <tag>piston</tag>
+      <tag>supercharged</tag>
+      <tag>propeller</tag>
+      <tag>variable-pitch</tag>
+      <tag>twin-engine</tag>
+    </tags>
+
   </sim>
 
 </PropertyList>
